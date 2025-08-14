@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Chonkers - The App for Your Best Friend</title>
+<link href="https://user-images.githubusercontent.com/13159146/212347915-333c1626-9c4c-4235-950c-30b6567f8f6f.svg" rel="icon" type="image/svg+xml"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&amp;family=Poppins:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style type="text/tailwindcss">
+      :root {
+        --primary-color: #4ade80;
+        --secondary-color: #2563eb;
+        --background-light: #f9fafb;
+        --background-soft: #f3f4f6;
+        --text-dark: #1f2937;
+        --text-light: #ffffff;
+        --text-muted: #6b7280;
+      }
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: var(--background-light);
+        color: var(--text-dark);
+      }
+      .font-display {
+        font-family: "Fredoka One", cursive;
+      }
+      .bg-hero {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)),
+          url("https://images.unsplash.com/photo-1552053831-71594a27632d?q=80&w=1924&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+      }
+      .btn {
+        @apply flex items-center justify-center gap-2 rounded-full px-8 py-4 font-bold transition-all duration-300 ease-in-out hover:shadow-lg hover:-translate-y-1;
+      }
+      .btn-primary {
+        @apply bg-[var(--primary-color)] text-[var(--text-light)];
+      }
+      .btn-secondary {
+        @apply bg-[var(--background-light)] text-[var(--secondary-color)];
+      }
+      .nav-link {
+        @apply text-lg font-semibold text-gray-700 hover:text-[var(--primary-color)] transition-colors relative after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-1 after:bg-[var(--primary-color)] after:transition-all after:duration-300 hover:after:w-full;
+      }
+      .testimonial-card {
+          @apply bg-[var(--background-light)] p-8 shadow-lg rounded-2xl transform transition-transform duration-300 hover:scale-105 hover:shadow-xl relative;
+      }
+      .testimonial-card::before {
+          content: '🐾';
+          position: absolute;
+          top: -20px;
+          left: -15px;
+          font-size: 4rem;
+          color: var(--primary-color);
+          opacity: 0.2;
+          transform: rotate(-15deg);
+          z-index: 0;
+      }
+      .newsletter-section {
+        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      }
+      .feature-card {
+        @apply bg-white rounded-2xl p-8 text-center shadow-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-2;
+      }
+      .feature-icon {
+        @apply w-20 h-20 bg-[var(--primary-color)] text-white rounded-full flex items-center justify-center mx-auto mb-6 shadow-md;
+      }
+    </style>
+</head>
+<body class="bg-[var(--background-light)] text-[var(--text-dark)]">
+<div class="flex min-h-screen flex-col">
+<header class="sticky top-0 z-50 w-full bg-white/90 backdrop-blur-lg shadow-sm">
+<nav class="container mx-auto px-6 py-4">
+<div class="flex items-center justify-between">
+<a class="flex items-center gap-3 group" href="#">
+<div class="h-12 w-12 text-[var(--primary-color)] transition-transform duration-300 group-hover:rotate-[360deg]">
+<svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm3.62 13.5L12 12.72 8.38 15.5l1.85-4.22L6.5 8.5h4.3l1.2-4.2 1.2 4.2h4.3l-3.73 2.78 1.85 4.22z"></path>
+</svg>
+</div>
+<h1 class="text-3xl font-display text-gray-900 transition-colors group-hover:text-[var(--primary-color)]">Chonkers</h1>
+</a>
+<div class="hidden items-center gap-10 md:flex">
+<a class="nav-link" href="#">Features</a>
+<a class="nav-link" href="#">Community</a>
+<a class="nav-link" href="#">Pricing</a>
+<a class="nav-link" href="#">Blog</a>
+</div>
+<a class="hidden rounded-full bg-[var(--secondary-color)] px-6 py-3 text-base font-semibold text-white transition-all hover:bg-blue-700/90 hover:shadow-md md:block" href="#">
+                        Get Started
+                    </a>
+<button class="md:hidden text-[var(--secondary-color)]">
+<i class="material-icons text-4xl">menu</i>
+</button>
+</div>
+</nav>
+</header>
+<main class="flex-grow">
+<section class="bg-hero flex min-h-[calc(100vh-88px)] items-center bg-cover bg-center py-20">
+<div class="container mx-auto px-6 text-center">
+<div class="mx-auto max-w-4xl">
+<h2 class="font-display text-6xl font-extrabold leading-tight tracking-tight text-[var(--text-light)] drop-shadow-lg sm:text-7xl md:text-8xl">
+                            For the Love of Chonks!
+                        </h2>
+<p class="mt-6 text-xl text-gray-100 drop-shadow-md md:text-2xl">
+                            Your pet’s VIP headquarters. Keep track of their schedule, nail every vaccination date, and never risk the “you forgot my walk” glare again. From vet visits to treats and tail wags, it’s all here in one paw-some place!
+                        </p>
+<div class="mt-12 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+<a class="btn btn-primary w-full sm:w-auto" href="#">
+<i class="material-icons">apple</i>
+<span class="truncate">Download for iOS</span>
+</a>
+<a class="btn btn-secondary w-full sm:w-auto" href="#">
+<i class="material-icons">shop</i>
+<span class="truncate">Download for Android</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 bg-[var(--background-soft)]">
+<div class="container mx-auto px-6">
+<div class="mb-16 text-center max-w-3xl mx-auto">
+<h2 class="font-display text-5xl font-extrabold tracking-tight text-[var(--text-dark)] sm:text-6xl">Everything Your Pet Needs, All in One App</h2>
+<p class="mt-4 text-lg text-[var(--text-muted)]">Chonkers makes pet care simpler and more connected. Manage health records, track activities, and find pet-friendly spots with ease.</p>
+</div>
+<div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
+<div class="feature-card">
+<div class="feature-icon">
+<i class="material-icons text-4xl">health_and_safety</i>
+</div>
+<h3 class="text-2xl font-bold text-[var(--text-dark)] mb-3">Health Hub</h3>
+<p class="text-base text-[var(--text-muted)]">Store vaccination records, track vet appointments, and get timely reminders for medications. A complete health profile for your pet at your fingertips.</p>
+</div>
+<div class="feature-card">
+<div class="feature-icon">
+<i class="material-icons text-4xl">pets</i>
+</div>
+<h3 class="text-2xl font-bold text-[var(--text-dark)] mb-3">Activity Tracking</h3>
+<p class="text-base text-[var(--text-muted)]">Monitor daily walks, playtime, and feeding schedules to ensure your furry friend stays happy, healthy, and active. Set goals and celebrate milestones!</p>
+</div>
+<div class="feature-card">
+<div class="feature-icon">
+<i class="material-icons text-4xl">map</i>
+</div>
+<h3 class="text-2xl font-bold text-[var(--text-dark)] mb-3">Explore Places</h3>
+<p class="text-base text-[var(--text-muted)]">Discover dog parks, pet-friendly cafes, and groomers nearby. Read reviews from other pet owners and find the best spots for your companion.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 bg-green-50/50">
+<div class="container mx-auto px-6">
+<div class="mb-16 text-center">
+<h2 class="font-display text-5xl font-extrabold tracking-tight text-[var(--text-dark)] sm:text-6xl">Happy Dogs, Happy Owners</h2>
+<p class="mt-4 text-lg text-[var(--text-muted)]">See what the pack is barking about!</p>
+</div>
+<div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
+<div class="testimonial-card">
+<div class="flex items-center gap-4">
+<img alt="User avatar" class="h-16 w-16 rounded-full border-4 border-[var(--primary-color)]/50 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA59J4w3O7utxB6dSphH71Or9iqQZblN_PLEH85MJdtZrKSv7yWv_rpCrPuD8VJK7uvItYI7b8aBj8-7tKODDdOwS1aXvy1prPqGDYwwu9BoVOj3FE9OUDPnFHbzq3hgXzTHmeBqq1jTtN-RK9DpsjFckBeaRIMntLtG1UkV-YEBXGOlPVC1Jpt1arw1l1Xf6A8yf4MvrOysQBYDtuBFJLCY4Ub0vRqFuE2yt48vJvReyoMsMzqaJnVxSm5oSEmVnYt9ztudUVAK9PN"/>
+<div>
+<h3 class="text-xl font-bold text-[var(--text-dark)]">Mike &amp; Buddy</h3>
+<p class="text-sm font-medium text-[var(--secondary-color)]">Dog Dad</p>
+</div>
+</div>
+<p class="mt-6 text-base text-gray-700 z-10 relative">"Chonkers is a game-changer! I never miss Buddy's vet appointments thanks to the reminders. The park finder helped us discover so many new sniffing spots. We're obsessed!"</p>
+</div>
+<div class="testimonial-card">
+<div class="flex items-center gap-4">
+<img alt="User avatar" class="h-16 w-16 rounded-full border-4 border-[var(--primary-color)]/50 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCg6ybBngZBvKbAU-3CZrbF__4k8oqGDkGJwW0kPjQQgz2DSG2Q_28Tr7b1DRG1EuuEV0SFO3eBf5IoA21uXzyY0t5OF-XuBtvvF6HWseJjlk7wNS_1CL4QlrInFc_epl4baSRYYl6krDo6KPvg9b_lgUD0ZZPqHMLFtlwOlMDJ8c4s2kpio7Rh5EIJhN10t1RKyj4WMeVe5IctBh8UPbh8tnZmJXcc_sOi2YpzmDDyWjb9e4TnTgw8fUCasLv01bHDGScV738K3cnU"/>
+<div>
+<h3 class="text-xl font-bold text-[var(--text-dark)]">Sarah &amp; Lucy</h3>
+<p class="text-sm font-medium text-[var(--secondary-color)]">Dog Lover</p>
+</div>
+</div>
+<p class="mt-6 text-base text-gray-700 z-10 relative">"Finally, an app that's as energetic as my dog! Tracking her walks is a breeze, and sharing her goofy photos with the community is the best part. Lucy gives it two paws up!"</p>
+</div>
+<div class="testimonial-card">
+<div class="flex items-center gap-4">
+<img alt="User avatar" class="h-16 w-16 rounded-full border-4 border-[var(--primary-color)]/50 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOZJb_REjlCXATIi-xqaEnt8Y6gMse0-t_DRoyOFDclG7CdIsjOyzuHX86pyqO2V_RG7X1TZoDm9yGNbAG7xXfHmfy9NFLChPpRhePzLk-d3Lvlk0ri79bpZEvoGOcfYOVD6UUPYsHBpKsu5F4bSbgVjJQqMgR8wZoz-17Qvug3ZAftVN2Q-WGCeEGuXFn4iXYfSS1UkzOeyQjEijpvaxOobwNxXRB_pQ-U3Fxg32kBDCl5OxpKNFRbseZsZ6-snBzjTxaF4w4RzsS"/>
+<div>
+<h3 class="text-xl font-bold text-[var(--text-dark)]">Alex &amp; Max</h3>
+<p class="text-sm font-medium text-[var(--secondary-color)]">Proud Pet Parent</p>
+</div>
+</div>
+<p class="mt-6 text-base text-gray-700 z-10 relative">"I love how easy it is to track Max's meals and training progress. The breed-specific health tips in the blog are incredibly helpful. This app truly thinks of everything a dog parent needs."</p>
+</div>
+</div>
+</div>
+</section>
+<section class="newsletter-section py-20 relative overflow-hidden">
+<div class="absolute inset-0">
+<img alt="dog background pattern" class="w-full h-full object-cover opacity-10" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLuWFVtGWQKBUNLIWBUI4xqopFfhc_6RkeHM0N4C9--EpBAcgbaHBt-Q1toJEoj2gvti5eHKjM46dDauq9D3MIvWaYsEzxXjVrdPEDPBipLi6sdmVIPKipaiFqFVNzv1-k8cWk-V14H7QJJQOxHRaARamtI_umB8L2IcExb1ZvS0N1tN4erGjZ_pyRg0dr-mKZoU7rQ9o8xtXmGbTKlHX77Zq52TnqrmWPLncJrHQEgNtrbdUPND100_QTAC0hAwjr5u_ywXPi4RBo"/>
+</div>
+<div class="container mx-auto px-6 relative">
+<div class="mx-auto max-w-2xl text-center">
+<h2 class="font-display text-4xl font-extrabold tracking-tight text-[var(--text-light)] sm:text-5xl">Join the Pack!</h2>
+<p class="mt-4 text-lg text-green-100">Get weekly dog-walking routes, training tips, and exclusive deals sent straight to your inbox. No spam, just pawsome content.</p>
+<form class="mt-8 sm:flex sm:gap-4">
+<div class="flex-1">
+<label class="sr-only" for="email">Email address</label>
+<input class="w-full rounded-full border-transparent px-6 py-4 text-base text-gray-900 placeholder-gray-500 shadow-sm focus:border-[var(--primary-color)] focus:ring-2 focus:ring-[var(--primary-color)]/80" id="email" name="email" placeholder="Enter your email" type="email"/>
+</div>
+<button class="btn bg-white text-[var(--secondary-color)] mt-4 w-full sm:mt-0 sm:w-auto hover:bg-gray-100" type="submit">
+<span>Subscribe</span>
+<i class="material-icons">send</i>
+</button>
+</form>
+<p class="mt-4 text-sm text-green-200">We respect your privacy and your inbox. <a class="font-medium underline hover:text-white" href="#">Privacy Policy</a>.</p>
+</div>
+</div>
+</section>
+</main>
+<footer class="bg-[var(--background-soft)] py-12">
+<div class="container mx-auto px-6">
+<div class="flex flex-col items-center gap-8">
+<div class="flex flex-wrap justify-center gap-x-8 gap-y-4">
+<a class="text-base text-[var(--text-muted)] hover:text-[var(--primary-color)] transition-colors" href="#">Privacy Policy</a>
+<a class="text-base text-[var(--text-muted)] hover:text-[var(--primary-color)] transition-colors" href="#">Terms of Service</a>
+<a class="text-base text-[var(--text-muted)] hover:text-[var(--primary-color)] transition-colors" href="#">Contact Us</a>
+</div>
+<div class="flex justify-center gap-6">
+<a class="text-[var(--text-muted)] hover:text-[var(--primary-color)] transition-colors" href="#">
+<svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.323-1.325z"></path>
+</svg>
+</a>
+<a class="text-[var(--text-muted)] hover:text-[var(--primary-color)] transition-colors" href="#">
+<svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path>
+</svg>
+</a>
+<a class="text-[var(--text-muted)] hover:text-[var(--primary-color)] transition-colors" href="#">
+<svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616v.064c0 2.299 1.624 4.22 3.779 4.664-.69.188-1.427.23-2.165.084.616 1.924 2.344 3.326 4.398 3.364-1.79 1.402-4.015 2.148-6.38 2.02 1.94 1.292 4.258 2.036 6.745 2.036 8.093 0 12.55-6.702 12.24-12.82.86-.621 1.61-1.401 2.2-2.288z"></path>
+</svg>
+</a>
+</div>
+<p class="text-center text-base text-[var(--text-muted)]">
+                        © 2024 Chonkers. All rights reserved. Made with ❤️ for our furry friends.
+                    </p>
+</div>
+</div>
+</footer>
+</div>
+</body></html>
